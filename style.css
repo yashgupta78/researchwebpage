@@ -1,0 +1,492 @@
+/* ======================= Global Styles & Variables ======================= */
+:root {
+    --primary-text: #1a1a1a;
+    --secondary-text: #555;
+    --background-color: #ffffff;
+    --light-gray: #f7f7f7;
+    --border-color: #e0e0e0;
+    --main-font: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-font);
+    line-height: 1.6;
+    color: var(--primary-text);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    color: var(--secondary-text);
+}
+
+section {
+    padding: 5rem 0;
+}
+
+/* ======================= Header & Navigation ======================= */
+.main-header {
+    background: var(--background-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: var(--secondary-text);
+    font-weight: 500;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary-text);
+    border-bottom-color: var(--primary-text);
+}
+
+/* ======================= Hero Section ======================= */
+.hero {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1170&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.hero h1 {
+    margin-bottom: 3rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.hero-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hero-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-card h3 {
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #fff;
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* ======================= About Us Section ======================= */
+.about-section {
+    background-color: var(--light-gray);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.about-content h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+}
+
+/* ======================= Services & Research (Shared Styles) ======================= */
+.services-section {
+    background-color: var(--background-color);
+}
+
+.research-section {
+    background-color: var(--light-gray);
+}
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.item-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.item-card p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.item-card .btn {
+    align-self: flex-start;
+}
+
+.item-card-image {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.item-card-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.item-card-image .card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.item-card-image .card-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.item-card-image .card-content p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+/* ======================= Clients Section ======================= */
+.clients-section {
+    background-color: var(--background-color);
+}
+
+.client-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.client-logos img {
+    max-height: 100px;
+    opacity: 0.6;
+    transition: opacity 0.6s;
+}
+
+.client-logos img:hover {
+    opacity: 1;
+}
+
+/* ======================= Testimonials Section ======================= */
+.testimonials-section {
+    background-color: var(--light-gray);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    text-align: center;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.testimonial-card h4 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* ======================= Contact Section / Footer ======================= */
+.contact-section {
+    background-color: var(--primary-text);
+    color: #fff;
+}
+
+.contact-section h2,
+.contact-section h3 {
+    color: #fff;
+}
+
+.contact-section h2 {
+    margin-bottom: 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+}
+
+.contact-info-container a,
+.contact-info-container p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-details .contact-item {
+    margin-bottom: 1.5rem;
+}
+
+.contact-details .contact-item strong {
+    display: block;
+    color: #fff;
+}
+
+.map-container {
+    margin-top: 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    font-family: var(--main-font);
+    font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form .btn {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ======================= Responsive Design ======================= */
+@media (max-width: 900px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .hero {
+        height: auto;
+        padding: 5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-cards {
+        flex-direction: column;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-content h2 {
+        text-align: center;
+    }
+
+    .about-image {
+        max-width: 300px;
+        margin: 0 auto 2rem auto;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
